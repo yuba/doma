@@ -24,6 +24,7 @@ public class CompilerExtension extends AptinaTestCase
     setCharset("UTF-8");
     setLocale(Locale.ENGLISH);
     TimeZone.setDefault(TimeZone.getTimeZone("GMT+9"));
+    addOption("--enable-preview","--release","14");
   }
 
   @Override

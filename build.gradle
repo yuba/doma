@@ -21,6 +21,10 @@ ext {
 //    }
 //}
 
+tasks.withType(Test) {
+    jvmArgs += "--enable-preview"
+}
+
 compileJava {
     doFirst {
         ant.replaceregexp(
@@ -47,7 +51,7 @@ compileJava {
 
 compileTestJava {
     options.encoding = encoding
-    options.compilerArgs = ['-proc:none']
+    options.compilerArgs = ['-proc:none', '--enable-preview']
 }
 
 test {
