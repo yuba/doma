@@ -464,7 +464,7 @@ public enum Message implements MessageResource {
   DOMA4104(
       "The accessor method \"{0}\" is not found. "
           + "The method must have the return type \"{1}\" and must be non-private and non-args."),
-  DOMA4105("You can annotate only classes, interfaces and enums with @Domain"),
+  DOMA4105("You can annotate only classes, interfaces, enums and records with @Domain"),
   DOMA4106(
       "The factory method　\"{0}\" is not found. "
           + "The method must have the return type \"{1}\" and the parameter type \"{2}\" and must be non-private and static. "

@@ -73,7 +73,8 @@ class DomainProcessorTest extends CompilerSupport {
           invocationContext(InterfaceOuter.class, InterfaceOuter.Inner.class),
           invocationContext(VersionCheckSuppressedDomain.class, "-Adoma.version.validation=false"),
           invocationContext(LombokValue.class, "-Adoma.lombok.Value=" + Value.class.getName()),
-          invocationContext(PrimitiveValueDomain.class));
+          invocationContext(PrimitiveValueDomain.class),
+          invocationContext(RecordSalary.class));
     }
 
     private TestTemplateInvocationContext invocationContext(

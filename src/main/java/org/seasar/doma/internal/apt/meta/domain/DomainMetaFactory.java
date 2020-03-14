@@ -129,7 +129,8 @@ public class DomainMetaFactory implements TypeElementMetaFactory<DomainMeta> {
 
     @Override
     public void validateClass(TypeElement classElement, DomainMeta domainMeta) {
-      if (classElement.getKind() == ElementKind.CLASS) {
+      ElementKind kind = classElement.getKind();
+      if (kind == ElementKind.CLASS || kind == ElementKind.RECORD) {
         if (domainMeta.providesConstructor()
             && classElement.getModifiers().contains(Modifier.ABSTRACT)) {
           throw new AptException(Message.DOMA4132, classElement, new Object[] {});
@@ -137,7 +138,7 @@ public class DomainMetaFactory implements TypeElementMetaFactory<DomainMeta> {
         if (classElement.getNestingKind().isNested()) {
           validateEnclosingElement(classElement);
         }
-      } else if (classElement.getKind() == ElementKind.ENUM) {
+      } else if (kind == ElementKind.ENUM) {
         if (domainMeta.providesConstructor()) {
           DomainAnnot domainAnnot = domainMeta.getDomainAnnot();
           throw new AptException(
@@ -150,7 +151,7 @@ public class DomainMetaFactory implements TypeElementMetaFactory<DomainMeta> {
         if (classElement.getNestingKind().isNested()) {
           validateEnclosingElement(classElement);
         }
-      } else if (classElement.getKind() == ElementKind.INTERFACE) {
+      } else if (kind == ElementKind.INTERFACE) {
         if (domainMeta.providesConstructor()) {
           throw new AptException(Message.DOMA4268, classElement, new Object[] {});
         }
