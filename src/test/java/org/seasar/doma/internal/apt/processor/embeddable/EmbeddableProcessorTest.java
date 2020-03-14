@@ -59,7 +59,8 @@ class EmbeddableProcessorTest extends CompilerSupport {
           invocationContext(
               LombokAllArgsConstructor.class,
               "-Adoma.lombok.AllArgsConstructor=" + AllArgsConstructor.class.getName()),
-          invocationContext(Derived.class));
+          invocationContext(Derived.class),
+          invocationContext(RecordAddress.class));
     }
 
     private TestTemplateInvocationContext invocationContext(

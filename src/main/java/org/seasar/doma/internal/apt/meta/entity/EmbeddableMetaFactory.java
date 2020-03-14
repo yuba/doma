@@ -98,7 +98,8 @@ public class EmbeddableMetaFactory implements TypeElementMetaFactory<EmbeddableM
 
     @Override
     public void validateClass(TypeElement embeddableElement, EmbeddableMeta embeddableMeta) {
-      if (embeddableElement.getKind() != ElementKind.CLASS) {
+      ElementKind kind = embeddableElement.getKind();
+      if (kind != ElementKind.CLASS && kind != ElementKind.RECORD) {
         EmbeddableAnnot embeddableAnnot = embeddableMeta.getEmbeddableAnnot();
         throw new AptException(
             Message.DOMA4283,

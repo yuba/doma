@@ -803,7 +803,7 @@ public enum Message implements MessageResource {
   DOMA4281(
       "The number, type and name of the constructor parameters must correspond to "
           + "those of persistent fields in the immutable entity class."),
-  DOMA4283("You can annotated only classes with @Embeddable."),
+  DOMA4283("You can annotate only classes and records with @Embeddable."),
   DOMA4285("The embeddable class must not have a type parameter."),
   DOMA4286("The fields of the embeddable class cannot be annotated with @OriginalStates."),
   DOMA4288("The annotation \"{0}\" competes with the annotation \"{1}\"."),
