@@ -376,7 +376,7 @@ public enum Message implements MessageResource {
   DOMA4011(
       "The annotation processing for the class \"{0}\" is failed. The cause is as follows: {1}"),
   DOMA4014("Cannot annotate the type with @Dao because the type isn''t an interface."),
-  DOMA4015("Cannot annotate the type with @Entity because the type isn''t a class."),
+  DOMA4015("Cannot annotate the type with @Entity because the type is neither a class nor a record."),
   DOMA4016(
       "An unexpected error has occurred. It may be a bug in the Doma framework. Report the following stacktrace: {0}"),
   DOMA4017("The DAO interface must be a top level interface."),

@@ -347,7 +347,8 @@ public class CtTypes {
     }
     Name binaryName = ctx.getMoreElements().getBinaryName(typeElement);
     ClassName descClassName = ClassNames.newEntityDescClassName(binaryName);
-    return new EntityCtType(ctx, type, entity.immutable(), descClassName);
+    boolean immutable = typeElement.getKind() == ElementKind.RECORD || entity.immutable();
+    return new EntityCtType(ctx, type, immutable, descClassName);
   }
 
   private FunctionCtType newFunctionCtType(TypeMirror type) {

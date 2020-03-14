@@ -126,6 +126,9 @@ public class EntityMetaFactory implements TypeElementMetaFactory<EntityMeta> {
   }
 
   private boolean resolveImmutable(TypeElement classElement, EntityAnnot entityAnnot) {
+    if (classElement.getKind() == ElementKind.RECORD) {
+      return true;
+    }
     boolean result = false;
     List<Boolean> resolvedList = new ArrayList<>();
     for (AnnotationValue value : getEntityElementValueList(classElement, "immutable")) {
@@ -205,7 +208,8 @@ public class EntityMetaFactory implements TypeElementMetaFactory<EntityMeta> {
 
     void validateClass(TypeElement classElement, EntityMeta entityMeta) {
       EntityAnnot entityAnnot = entityMeta.getEntityAnnot();
-      if (classElement.getKind() != ElementKind.CLASS) {
+      ElementKind kind = classElement.getKind();
+      if (kind != ElementKind.CLASS && kind != ElementKind.RECORD) {
         throw new AptException(
             Message.DOMA4015, classElement, entityAnnot.getAnnotationMirror(), new Object[] {});
       }

@@ -94,7 +94,8 @@ class EntityProcessorTest extends CompilerSupport {
           invocationContext(LombokValue.class, "-Adoma.lombok.Value=" + Value.class.getName()),
           invocationContext(
               LombokAllArgsConstructor.class,
-              "-Adoma.lombok.AllArgsConstructor=" + AllArgsConstructor.class.getName()));
+              "-Adoma.lombok.AllArgsConstructor=" + AllArgsConstructor.class.getName()),
+          invocationContext(RecordEmp.class));
     }
 
     private TestTemplateInvocationContext invocationContext(
