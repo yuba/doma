@@ -1,5 +1,5 @@
 plugins {
-    id 'com.diffplug.gradle.spotless' version '3.20.0'
+//    id 'com.diffplug.gradle.spotless' version '3.20.0'
     id 'java'
     id 'signing'
     id 'maven'
@@ -15,11 +15,11 @@ ext {
     encoding = 'UTF-8'
 }
 
-spotless {
-    java {
-        googleJavaFormat('1.7')
-    }
-}
+//spotless {
+//    java {
+//        googleJavaFormat('1.7')
+//    }
+//}
 
 compileJava {
     doFirst {
